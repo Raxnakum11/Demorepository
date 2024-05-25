@@ -1,41 +1,35 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+using namespace std;
+class Time
+{
+private :
+int hour, minute, second;
+public :
+void setTime(int h, int m, int s);
+void print();
 
-class SOLID_CARBon {
-protected:
-    std::string diamond_or_graphite;
-    std::string o_name;
+};  
+void Time::setTime(int h, int m, int s)
+{
+hour=h;
+minute=m;
+second=s;
+}
+void Time::print()
+{
+cout<<"hours=\n"<<hour;
+cout<<"minutes=\n"<<minute;
+cout<<"seconds=\n"<<second;
+}  
+int main()
+{
+int h,m,s;
+Time t1;
+cout<<"Enter hours="; cin>>h;
+cout<<"Enter minutes="; cin>>m;
+cout<<"Enter seconds="; cin>>s;
 
-public:
-    SOLID_CARBon(std::string d_or_g, std::string owner_name) : diamond_or_graphite(d_or_g), o_name(owner_name) {}
-
-    void display() {
-        std::cout << "Type: " << diamond_or_graphite << std::endl;
-        std::cout << "Owner: " << o_name << std::endl;
-    }
-};
-
-class DIAMOND : public SOLID_CARBon {
-private:
-    int carat;
-    std::string color;
-
-public:
-    DIAMOND(std::string d_or_g, std::string owner_name, int c, std::string col) : SOLID_CARBon(d_or_g, owner_name), carat(c), color(col) {}
-
-    void display() {
-        SOLID_CARBon::display();
-        std::cout << "Carat: " << carat << std::endl;
-        std::cout << "Color: " << color << std::endl;
-    }
-};
-
-int main() {
-    DIAMOND* diamond_ptr = new DIAMOND("Diamond", "John Doe", 5, "White");
-
-    diamond_ptr->display();
-
-    delete diamond_ptr;
-
-    return 0;
+t1.setTime(h,m,s);
+t1.print();
+return 0;
 }
