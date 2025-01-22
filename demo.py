@@ -34,7 +34,7 @@ def add_event():
     if event_name:
         if event_name not in events:
             events[event_name] = []
-            messagebox.showinfo("Success", f"Event '{event_name}' added successfully.")
+            messagebox.showinfo("Success", f"Event '{event_name}' added successfully. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         else:
             messagebox.showwarning("Warning", "Event already exists.")
     else:
